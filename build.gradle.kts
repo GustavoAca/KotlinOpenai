@@ -45,6 +45,10 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
+taskd.jar{
+	manifest.attributes["Main-class"] = "com.br.kotlin.KotlinApplication"
+}
+
 tasks.withType<Test> {
 	useJUnitPlatform()
 }

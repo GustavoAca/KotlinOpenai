@@ -23,8 +23,8 @@ class SimulateController(private val simulateService: SimulateService) {
         ApiResponse(responseCode = "200", description = "Simulate successful"),
         ApiResponse(responseCode = "422", description = "Team(s) not found in the Women's World Cup")
     ])
-    fun simulate(@PathVariable timeDeCas: String, @PathVariable timeDeFora: String): ResponseEntity<TeamDto> {
-        val winner = simulateService.simulate(timeDeCas, timeDeFora)
+    fun simulate(@PathVariable timeDeCasa: String, @PathVariable timeDeFora: String): ResponseEntity<TeamDto> {
+        val winner = simulateService.simulate(timeDeCasa, timeDeFora)
         return ResponseEntity.ok(TeamDto(winner))
     }
 }
